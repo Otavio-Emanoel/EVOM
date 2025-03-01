@@ -1,2 +1,78 @@
-/**/
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+.header-bar{
+    background-color: #070;
+    color: #fff;
+    height: 39px;
+    font-size: 20px;
+    font-weight: medium;
+    display: flex;
+    align-items: center;
+    padding: 0 13px;
+}
+h1{
+    font-size: 40px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+.logo-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.main-button{
+    background-color: #070;
+    color: #fff;
+    margin-top: 60px !important;
+}
+.sec-button{
+    background-color: #fff;
+    color: #070;
+}
+.sec-button, .main-button{
+    border: 1px solid #070;
+    width: 80%;
+    height: 50px;
+    margin: 15px auto;
+    display: block;
+    text-align: center;
+    font-weight: regular;
+    font-size: 24px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 89px;
+    background-color: #eee;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon{
+    font-size: 39px;
+    color: #000;
+    z-index: 1;
+}
+.sel{
+    color: #070;
+}
+.sp-icon{
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: #070;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+}
