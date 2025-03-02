@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
+body{
+    padding: 0 0 120px 0;
+}
 .header-bar{
     background-color: #070;
     color: #fff;
@@ -75,4 +78,10 @@ footer{
     align-items: center;
     width: 70px;
     height: 70px;
+}
+a{
+    text-decoration: none;
+}
+.nav-link:active{
+    color: #050;
 }
