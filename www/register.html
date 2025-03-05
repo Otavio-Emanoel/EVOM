@@ -26,10 +26,86 @@
         - E Quanto tempo vai ficar estacionado 
     -->
     <form method="" action="" class="register-form">
-        <input class="register-input" name="marca" type="text" placeholder="Marca">
-        <input class="register-input" name="modelo" type="text" placeholder="Modelo">
-        <input class="register-input" name="cor" type="text" placeholder="Cor">
-        <input class="register-input" name="placa" type="text" placeholder="Placa">
+        <input class="register-input" name="marca" type="text" placeholder="Marca" list="marca-list">
+        <datalist id="marca-list">
+            <option value="Toyota">
+            <option value="Honda">
+            <option value="Ford">
+            <option value="Chevrolet">
+            <option value="BMW">
+            <option value="Mercedes">
+            <option value="Audi">
+            <option value="Volkswagen">
+            <option value="Hyundai">
+            <option value="Nissan">
+            <option value="Kia">
+            <option value="Peugeot">
+            <option value="Renault">
+            <option value="Fiat">
+            <option value="Jeep">
+            <option value="Subaru">
+            <option value="Mazda">
+            <option value="Mitsubishi">
+            <option value="Land Rover">
+            <option value="Jaguar">
+        </datalist>
+        <input class="register-input" name="modelo" type="text" placeholder="Modelo" list="modelo-list">
+        <datalist id="modelo-list">
+            <option value="Corolla">
+            <option value="Civic">
+            <option value="Mustang">
+            <option value="Camaro">
+            <option value="X5">
+            <option value="C-Class">
+            <option value="A4">
+            <option value="Golf">
+            <option value="Elantra">
+            <option value="Altima">
+            <option value="Sportage">
+            <option value="208">
+            <option value="Clio">
+            <option value="Punto">
+            <option value="Compass">
+            <option value="Forester">
+            <option value="CX-5">
+            <option value="Outlander">
+            <option value="Range Rover">
+            <option value="XF">
+            <option value="Accord">
+            <option value="Model S">
+            <option value="Model 3">
+            <option value="Model X">
+            <option value="Model Y">
+            <option value="F-150">
+            <option value="Silverado">
+            <option value="Wrangler">
+            <option value="Cherokee">
+            <option value="Tucson">
+            <option value="Santa Fe">
+            <option value="Sorento">
+            <option value="Optima">
+            <option value="Rio">
+            <option value="500">
+            <option value="Renegade">
+            <option value="Discovery">
+            <option value="Evoque">
+        </datalist>
+        <input class="register-input" name="cor" type="text" placeholder="Cor" list="cor-list">
+        <datalist id="cor-list">
+            <option value="Preto">
+            <option value="Branco">
+            <option value="Prata">
+            <option value="Cinza">
+            <option value="Vermelho">
+            <option value="Azul">
+            <option value="Verde">
+            <option value="Amarelo">
+            <option value="Marrom">
+            <option value="Roxo">
+            <option value="Laranja">
+            <option value="Rosa">
+        </datalist>
+        <input class="register-input" name="placa" type="text" placeholder="Placa" pattern="[A-Z]{3}[0-9][0-9A-Z][0-9]{2}" title="Formato da placa: ABC1D23">
 
         <div class="register-form-vehicle-type">
             <input type="radio" id="combustao" name="tipo" value="combustao" class="register-input-radio">
