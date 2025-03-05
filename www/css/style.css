@@ -194,3 +194,76 @@ form.register-form > div.register-form-vehicle-type {
     background-color: #030;
     transform: scale(0.97);
 }
+
+/* Salvos */
+
+main.saved-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+}
+
+main.saved-content > div.card {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background-color: #fcfcfc;
+    border: 1.5px solid #1f1f1f;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    & .marca-modelo {
+        font-size: 16pt;
+        font-weight: bold;
+        color: #050;
+    }
+    
+    & .placa {
+        font-size: 14pt;
+        font-weight: 600;
+        word-break: break-word;
+    }
+
+    & .cor {
+        font-size: 12pt;
+        color: #333;
+    }
+
+    & .card-actions {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        gap: 5px;
+    }
+
+    & .action-btn {
+        background: white;
+        border: 1px solid #1f1f1f;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 14pt;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    & .action-btn:hover {
+        background-color: #eee;
+    }
+}
