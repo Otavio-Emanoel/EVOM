@@ -15,6 +15,38 @@
 <body>
 	<header class="header-bar">Registre seu carro</header>
     <h1>Estacione seu carro</h1>
+    <!-- Formulário para adicionar o seu veículo -->
+
+    <!-- Deve conter:
+        - Marca
+        - Modelo
+        - Cor
+        - Placa
+        - Se é Elétrico
+        - E Quanto tempo vai ficar estacionado 
+    -->
+    <form method="" action="" class="register-form">
+        <input class="register-input" name="marca" type="text" placeholder="Marca">
+        <input class="register-input" name="modelo" type="text" placeholder="Modelo">
+        <input class="register-input" name="cor" type="text" placeholder="Cor">
+        <input class="register-input" name="placa" type="text" placeholder="Placa">
+
+        <div class="register-form-vehicle-type">
+            <input type="radio" id="combustao" name="tipo" value="combustao" class="register-input-radio">
+            <label for="combustao">Combustão</label>
+
+            <input type="radio" id="eletrico" name="tipo" value="eletrico" class="register-input-radio">
+            <label for="eletrico">Elétrico</label>
+
+            <input type="radio" id="hibrido" name="tipo" value="hibrido" class="register-input-radio">
+            <label for="hibrido">Híbrido</label>
+        </div>
+        
+        <input class="register-input" name="tempo" type="text" placeholder="Quanto tempo?">
+
+        <button class="register-button" type="">Registrar carro</button>
+    </form>
+
     <footer>
         <a href="index.html" class="nav-link"><i class="fas fa-home icon sel"></i></a>
         <a href="register.html" class="nav-link"><i class="fas fa-car icon sp-icon"></i></a>  

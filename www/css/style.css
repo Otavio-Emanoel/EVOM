@@ -85,3 +85,112 @@ a{
 .nav-link:active{
     color: #050;
 }
+
+/* Pagina de Registro de veículo */
+
+form.register-form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+form.register-form > input.register-input {
+    width: 600px;
+    max-width: 90%;
+    height: 55px;
+    border: 1px solid #1f1f1f;
+    border-radius: 2px;
+    padding: 0 15px;
+    font-size: 20pt;
+    background-color: transparent;
+    color: #1f1f1f;
+    
+    &::placeholder {
+        user-select: none;
+    }
+    
+    &:focus {
+        transition: all .3s;
+        box-shadow: 0 1px 1px #000,
+            0 -1px 1px #000,
+            1px 0 1px #000,
+            -1px 0 1px #000;
+        border: 1px solid #1f1f1f;
+        outline: 0;
+    }
+}
+
+form.register-form > div.register-form-vehicle-type {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.register-form-vehicle-type label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15pt;
+    color: #1f1f1f;
+    cursor: pointer;
+    position: relative;
+}
+
+.register-input-radio {
+    display: none;
+}
+
+.register-input-radio + label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1f1f1f;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.register-input-radio:checked + label::before {
+    background-color: #070;
+    border-color: #070;
+    box-shadow: 0 0 5px rgba(0, 50, 0, 0.5);
+}
+
+.register-form-vehicle-type label:hover::before {
+    border-color: #070;
+}
+
+.register-button {
+    background-color: #070;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+    max-width: 350px; 
+    display: block;
+    margin: 10px auto; 
+    text-align: center;
+    touch-action: manipulation;
+}
+
+.register-button:hover,
+.register-button:focus {
+    background-color: #050;
+    box-shadow: 0 4px 12px rgba(0, 80, 0, 0.5);
+}
+
+.register-button:active {
+    background-color: #030;
+    transform: scale(0.97);
+}
