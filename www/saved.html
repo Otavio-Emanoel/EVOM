@@ -15,25 +15,7 @@
 <body>
 	<header class="header-bar">Carros no estacionamento</header>
     <main class="saved-content">
-        <div class="card">
-            <p class="marca-modelo">Marca: Modelo do carro</p>
-            <p class="placa">Placa: AAA1111</p>
-            <p class="cor">Cor: Branco</p>
-            
-            <div class="card-actions">
-                <button class="action-btn"><i class="fas fa-edit"></i></button>
-                <button class="action-btn"><i class="fas fa-trash"></i></button>
-            </div>
-        </div><div class="card">
-            <p class="marca-modelo">Marca: Modelo do carro</p>
-            <p class="placa">Placa: AAA1111</p>
-            <p class="cor">Cor: Branco</p>
-            
-            <div class="card-actions">
-                <button class="action-btn"><i class="fas fa-edit"></i></button>
-                <button class="action-btn"><i class="fas fa-trash"></i></button>
-            </div>
-        </div>
+        
     </main>
     
     <footer>
@@ -41,5 +23,24 @@
         <a href="register.html" class="nav-link"><i class="fas fa-car icon sp-icon"></i></a>  
         <a href="saved.html" class="nav-link"><i class="fas fa-heart icon"></i></a>
     </footer>
+    <script>
+        fetch("https://evom-backend.vercel.app/api/getdata.php",{
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            console.log(data)
+            data.forEach(item=>{
+                let div = document.createElement("div");
+                div.innerHTML = `<p class="marca-modelo">${item.marca || 'N/A'}: ${item.modelo || 'N/A'}</p><p class="placa">Placa: ${item.placa || 'N/A'}</p><p class="cor">Cor: ${item.cor || 'N/A'}</p><div class="card-actions"><button class="action-btn" onclick="fetch('https://evom-backend.vercel.app/api/delete.php?id=${item.id}').then(() => location.reload())"><i class="fas fa-trash"></i></button></div>`;
+                div.classList.add("card");
+                document.querySelector(".saved-content").appendChild(div);
+            })
+        }).catch(error => {
+            console.error(error);
+        });
+    </script>
 </body>
 </html>

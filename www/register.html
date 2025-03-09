@@ -108,19 +108,19 @@
         <input class="register-input" name="placa" type="text" placeholder="Placa" pattern="[A-Z]{3}[0-9][0-9A-Z][0-9]{2}" title="Formato da placa: ABC1D23">
 
         <div class="register-form-vehicle-type">
-            <input type="radio" id="combustao" name="tipo" value="combustao" class="register-input-radio">
+            <input type="radio" id="combustao" name="eletrico" value="Combustao" class="register-input-radio">
             <label for="combustao">Combustão</label>
 
-            <input type="radio" id="eletrico" name="tipo" value="eletrico" class="register-input-radio">
+            <input type="radio" id="eletrico" name="eletrico" value="Eletrico" class="register-input-radio">
             <label for="eletrico">Elétrico</label>
 
-            <input type="radio" id="hibrido" name="tipo" value="hibrido" class="register-input-radio">
+            <input type="radio" id="hibrido" name="eletrico" value="Hibrido" class="register-input-radio">
             <label for="hibrido">Híbrido</label>
         </div>
         
-        <input class="register-input" name="tempo" type="text" placeholder="Quanto tempo?">
+        <input class="register-input" name="tempo_estacionado" type="time" placeholder="Quanto tempo?">
 
-        <button class="register-button" type="">Registrar carro</button>
+        <button class="register-button" type="submit">Registrar carro</button>
     </form>
 
     <footer>
@@ -128,5 +128,40 @@
         <a href="register.html" class="nav-link"><i class="fas fa-car icon sp-icon"></i></a>  
         <a href="saved.html" class="nav-link"><i class="fas fa-heart icon"></i></a>
     </footer>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let marca = document.querySelector("input[name='marca']").value;
+            let modelo = document.querySelector("input[name='modelo']").value;
+            let cor = document.querySelector("input[name='cor']").value;
+            let placa = document.querySelector("input[name='placa']").value;
+            let eletrico = document.querySelector("input[name='eletrico']:checked").value;
+            let tempo = document.querySelector("input[name='tempo_estacionado']").value;
+
+            fetch("https://evom-backend.vercel.app/api/insert.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    marca: marca,
+                    modelo: modelo,
+                    cor: cor,
+                    placa: placa,
+                    eletrico: eletrico,
+                    tempo_estacionado: tempo
+                })
+            }).then(function(response) {
+                return response.text();
+            }).then(function(text) {
+                try {
+                    alert("Carro registrado com sucesso!");
+                    location.href = "saved.html";
+                } catch (error) {
+                    alert(text);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
